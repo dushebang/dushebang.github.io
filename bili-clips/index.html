@@ -9,6 +9,9 @@
 <style>
   body { padding: 34px 0 64px; }
 
+  /* 单页比首页稍宽，视频网格排得更舒展 */
+  .container { max-width: 1500px; }
+
   .backlink {
     display: inline-flex;
     align-items: center;
@@ -68,6 +71,13 @@
   }
   .clip:hover .clip-title { color: var(--accent); }
 
+  .clip-date {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.78rem;
+    color: var(--text-2);
+  }
+
   .empty { padding: 72px 0; text-align: center; color: var(--text-2); }
 </style>
 <script>
@@ -101,6 +111,11 @@
     var data = window.CLIP_DATA || { videos: [] };
     var videos = Array.isArray(data.videos) ? data.videos : [];
 
+    // 按原视频发布时间从新到旧排序
+    videos = videos.slice().sort(function (a, b) {
+      return String(b.pubdate || "").localeCompare(String(a.pubdate || ""));
+    });
+
     document.getElementById("count").textContent =
       videos.length ? "共 " + videos.length + " 个视频" : "";
 
@@ -131,6 +146,13 @@
       span.className = "clip-title";
       span.textContent = v.title || v.bvid;
       a.appendChild(span);
+
+      if (v.pubdate) {
+        var date = document.createElement("span");
+        date.className = "clip-date";
+        date.textContent = v.pubdate;
+        a.appendChild(date);
+      }
 
       grid.appendChild(a);
     });
