@@ -66,7 +66,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+.container { max-width: 1260px; margin: 0 auto; padding: 0 22px; }
 
 code {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Courier New", monospace;
@@ -377,7 +377,7 @@ a.card:hover .card-arrow {
 /* ---------- 左右布局：左侧链接栏 + 右侧内容 ---------- */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 6fr;
   gap: 18px;
   align-items: start;
   margin-top: 30px;

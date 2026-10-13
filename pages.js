@@ -53,10 +53,30 @@ window.SITE_DATA = {
     }
   ],
   links: [
-    // 左侧"链接"栏：title 名称、url 完整网址、desc 可选小字
+    // 左侧"链接"栏：title 名称、url 完整网址
     {
-      title: "谢天宇的斗鱼直播间",
+      title: "谢天宇的直播间",
       url: "https://www.douyu.com/96555"
+    },
+    {
+      title: "三酒OuO的直播间",
+      url: "https://www.douyu.com/39939"
+    },
+    {
+      title: "宁波小骚骚0oO的直播间",
+      url: "https://www.douyu.com/15000"
+    },
+    {
+      title: "林菜儿的直播间",
+      url: "https://www.douyu.com/88995"
+    },
+    {
+      title: "迪士尼o-O的直播间",
+      url: "https://www.douyu.com/88891"
+    },
+    {
+      title: "豌豆仙仙儿的直播间",
+      url: "https://www.douyu.com/92099"
     }
   ]
 };
