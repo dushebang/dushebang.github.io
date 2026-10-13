@@ -435,6 +435,32 @@ a.card:hover .card-arrow {
   .sidebar { grid-column: 1; grid-row: auto; position: static; }
 }
 
+/* ---------- 右上角天梯小挂件 ---------- */
+.ladder {
+  position: fixed;
+  top: 68px;
+  right: 18px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.ladder-score { font-size: 0.84rem; font-weight: 600; color: var(--text); }
+.ladder-score b { font-weight: 700; color: var(--accent); }
+.ladder-date { font-size: 0.72rem; color: var(--text-2); }
+
+@media (max-width: 600px) {
+  .ladder { display: none; }
+}
+
 /* ---------- 响应式与动效偏好 ---------- */
 @media (max-width: 560px) {
   .hero { padding-top: 60px; }
