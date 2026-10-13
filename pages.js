@@ -85,6 +85,10 @@ window.SITE_DATA = {
     {
       title: "豌豆仙仙儿的直播间",
       url: "https://www.douyu.com/92099"
+    },
+    {
+      title: "目黑川i的直播间",
+      url: "https://www.douyu.com/8436373"
     }
   ]
 };

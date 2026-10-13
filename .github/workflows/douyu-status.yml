@@ -5,6 +5,7 @@ on:
   workflow_dispatch: {}
   push:
     paths:
+      - "pages.js"
       - "scripts/douyu-status.js"
       - ".github/workflows/douyu-status.yml"
 permissions:
