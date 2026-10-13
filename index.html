@@ -140,6 +140,7 @@
           a.href = l.url || "#";
           a.target = "_blank";
           a.rel = "noopener";
+          a.dataset.rid = String(l.url || "").split("/").pop();
           a.innerHTML = '<span class="side-text">' + esc(l.title || l.url) + "</span>";
           li.appendChild(a);
           linkList.appendChild(li);
@@ -155,6 +156,25 @@
         document.getElementById("sidebar").hidden = true;
         document.getElementById("layout").classList.add("no-side");
       }
+
+      // ---- 直播状态：在播的直播间点亮紫灯（数据由 GitHub Actions 定时生成） ----
+      (function () {
+        var rids = links.map(function (l) { return String(l.url || "").split("/").pop(); })
+          .filter(function (r) { return /^\d+$/.test(r); });
+        if (!rids.length) { return; }
+        fetch("https://raw.githubusercontent.com/dushebang/dushebang.github.io/status/status.json?t=" + Date.now())
+          .then(function (r) { return r.json(); })
+          .then(function (st) {
+            var rooms = (st && st.rooms) || {};
+            rids.forEach(function (rid) {
+              if (rooms[rid] && rooms[rid].live) {
+                var el = document.querySelector('.side-link[data-rid="' + rid + '"]');
+                if (el) { el.classList.add("live"); }
+              }
+            });
+          })
+          .catch(function () {});
+      })();
 
       var grid = document.getElementById("page-grid");
       if (!pages.length) {
