@@ -44,18 +44,19 @@ window.SITE_DATA = {
       icon: "赛"
     },
     {
-      title: "胜负关系矩阵",
-      description: "队伍之间胜负关系一览",
-      url: "",
-      tags: ["Dota2", "对阵"]
+      title: "B站视频切片",
+      description: "B 站视频切片合集，点封面直达原视频",
+      url: "bili-clips/index.html",
+      tags: ["视频", "B站"],
+      updated: "2026-10-13",
+      icon: "视"
     }
   ],
   links: [
     // 左侧"链接"栏：title 名称、url 完整网址、desc 可选小字
     {
       title: "谢天宇的斗鱼直播间",
-      url: "https://www.douyu.com/96555",
-      desc: "douyu.com/96555"
+      url: "https://www.douyu.com/96555"
     }
   ]
 };

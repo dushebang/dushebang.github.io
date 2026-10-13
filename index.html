@@ -39,15 +39,14 @@
   </header>
 
   <main class="container">
+    <div class="filters" id="filters"></div>
     <div class="layout" id="layout">
       <div class="content">
-        <div class="filters" id="filters"></div>
         <section class="grid" id="page-grid"></section>
         <p class="empty" id="empty-hint" hidden>还没有页面，在 <code>pages.js</code> 里添加第一条记录吧。</p>
       </div>
       <aside class="sidebar" id="sidebar">
         <div class="side-panel">
-          <h3 class="side-title">链接</h3>
           <ul class="link-list" id="link-list"></ul>
         </div>
       </aside>
@@ -135,14 +134,16 @@
           a.href = l.url || "#";
           a.target = "_blank";
           a.rel = "noopener";
-          a.innerHTML =
-            '<span class="side-link-main">' +
-              '<span class="side-link-title">' + esc(l.title || l.url) + "</span>" +
-              (l.desc ? '<span class="side-link-desc">' + esc(l.desc) + "</span>" : "") +
-            "</span>" +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>';
+          a.innerHTML = '<span class="side-text">' + esc(l.title || l.url) + "</span>";
           li.appendChild(a);
           linkList.appendChild(li);
+
+          // 文字超出栏宽时：悬停可缓慢滚动查看
+          var over = a.scrollWidth - a.clientWidth;
+          if (over > 1) {
+            a.style.setProperty("--shift", over + "px");
+            a.classList.add("side-link--scroll");
+          }
         });
       } else {
         document.getElementById("sidebar").hidden = true;
