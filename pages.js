@@ -37,7 +37,7 @@ window.SITE_DATA = {
     },
     {
       title: "灿团户外决赛的24种可能",
-      description: "红/蓝/黑/白四队决赛名次的 24 种组合推演（黑队夺冠概率约 83%）",
+      description: "红/蓝/黑/白四队决赛 24 种名次推演——黑队 34 分夺冠的完整变化记录",
       url: "saiguo-24/index.html",
       tags: ["赛事", "推演"],
       updated: "2026-10-13",
