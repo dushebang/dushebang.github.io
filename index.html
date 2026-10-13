@@ -39,9 +39,19 @@
   </header>
 
   <main class="container">
-    <div class="filters" id="filters"></div>
-    <section class="grid" id="page-grid"></section>
-    <p class="empty" id="empty-hint" hidden>还没有页面，在 <code>pages.js</code> 里添加第一条记录吧。</p>
+    <div class="layout" id="layout">
+      <div class="content">
+        <div class="filters" id="filters"></div>
+        <section class="grid" id="page-grid"></section>
+        <p class="empty" id="empty-hint" hidden>还没有页面，在 <code>pages.js</code> 里添加第一条记录吧。</p>
+      </div>
+      <aside class="sidebar" id="sidebar">
+        <div class="side-panel">
+          <h3 class="side-title">链接</h3>
+          <ul class="link-list" id="link-list"></ul>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -112,6 +122,31 @@
           chipUpd.innerHTML = "最近更新 <b>" + esc(latest) + "</b>";
           chips.appendChild(chipUpd);
         }
+      }
+
+      // ---- 左侧链接栏（来自 pages.js 的 links） ----
+      var links = Array.isArray(data.links) ? data.links : [];
+      if (links.length) {
+        var linkList = document.getElementById("link-list");
+        links.forEach(function (l) {
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.className = "side-link";
+          a.href = l.url || "#";
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.innerHTML =
+            '<span class="side-link-main">' +
+              '<span class="side-link-title">' + esc(l.title || l.url) + "</span>" +
+              (l.desc ? '<span class="side-link-desc">' + esc(l.desc) + "</span>" : "") +
+            "</span>" +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>';
+          li.appendChild(a);
+          linkList.appendChild(li);
+        });
+      } else {
+        document.getElementById("sidebar").hidden = true;
+        document.getElementById("layout").classList.add("no-side");
       }
 
       var grid = document.getElementById("page-grid");
