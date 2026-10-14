@@ -170,10 +170,8 @@
               var info = rooms[rid];
               var el = document.querySelector('.side-link[data-rid="' + rid + '"]');
               if (!info || !el) { return; }
-              if (info.live && info.loop) {
-                el.classList.add("loop");
-                el.title = "轮播中";
-              } else if (info.live) {
+              // 轮播（loop）一律按下播处理
+              if (info.live && !info.loop) {
                 el.classList.add("live");
                 el.title = "直播中";
               } else {
