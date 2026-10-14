@@ -167,9 +167,17 @@
           .then(function (st) {
             var rooms = (st && st.rooms) || {};
             rids.forEach(function (rid) {
-              if (rooms[rid] && rooms[rid].live) {
-                var el = document.querySelector('.side-link[data-rid="' + rid + '"]');
-                if (el) { el.classList.add("live"); }
+              var info = rooms[rid];
+              var el = document.querySelector('.side-link[data-rid="' + rid + '"]');
+              if (!info || !el) { return; }
+              if (info.live && info.loop) {
+                el.classList.add("loop");
+                el.title = "轮播中";
+              } else if (info.live) {
+                el.classList.add("live");
+                el.title = "直播中";
+              } else {
+                el.title = "未开播";
               }
             });
           })
