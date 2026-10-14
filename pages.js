@@ -53,7 +53,7 @@ window.SITE_DATA = {
     },
     {
       title: "一些照片",
-      description: "图片集：点开可看大图、上下切换、下载原图",
+      description: "图片集：一些相关的照片、AI图、截图",
       url: "photos/index.html",
       tags: ["照片"],
       updated: "2026-10-14",
