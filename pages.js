@@ -89,6 +89,10 @@ window.SITE_DATA = {
     {
       title: "目黑川i的直播间",
       url: "https://www.douyu.com/8436373"
+    },
+    {
+      title: "少施施的直播间",
+      url: "https://www.douyu.com/12860332"
     }
   ]
 };
