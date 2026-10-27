@@ -42,22 +42,6 @@ window.SITE_DATA = {
       tags: ["赛事", "推演"],
       updated: "2026-10-13",
       icon: "赛"
-    },
-    {
-      title: "B站视频切片",
-      description: "B 站视频切片合集，点封面直达原视频",
-      url: "bili-clips/index.html",
-      tags: ["视频", "B站"],
-      updated: "2026-10-13",
-      icon: "视"
-    },
-    {
-      title: "一些照片",
-      description: "图片集：一些相关的照片、AI图、截图",
-      url: "photos/index.html",
-      tags: ["照片"],
-      updated: "2026-10-14",
-      icon: "照"
     }
   ],
   links: [
@@ -85,10 +69,6 @@ window.SITE_DATA = {
     {
       title: "豌豆仙仙儿的直播间",
       url: "https://www.douyu.com/92099"
-    },
-    {
-      title: "目黑川i的直播间",
-      url: "https://www.douyu.com/8436373"
     },
     {
       title: "少施施的直播间",
