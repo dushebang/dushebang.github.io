@@ -101,6 +101,15 @@
       var site = data.site || {};
       var pages = Array.isArray(data.pages) ? data.pages : [];
 
+      // ---- 按更新时间倒序：最新的排在最前，无日期的排最后 ----
+      pages = pages.slice().sort(function (a, b) {
+        var ua = a.updated || "", ub = b.updated || "";
+        if (ua === ub) { return 0; }
+        if (!ua) { return 1; }
+        if (!ub) { return -1; }
+        return ua < ub ? 1 : -1;
+      });
+
       var title = site.title || "数据站";
       document.title = title;
       document.getElementById("site-title").textContent = title;
