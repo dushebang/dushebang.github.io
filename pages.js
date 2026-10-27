@@ -42,6 +42,14 @@ window.SITE_DATA = {
       tags: ["赛事", "推演"],
       updated: "2026-10-13",
       icon: "赛"
+    },
+    {
+      title: "三团联动 · 赛季档案",
+      description: "九队读书班：73 签选秀、9/24 常规赛积分与曲线、季后赛对阵、每项实时预测",
+      url: "sanjian-saiji/index.html",
+      tags: ["赛事", "数据看板"],
+      updated: "2026-10-27",
+      icon: "季"
     }
   ],
   links: [
