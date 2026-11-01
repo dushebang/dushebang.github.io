@@ -45,7 +45,7 @@ window.SITE_DATA = {
     },
     {
       title: "三团联动 · 赛季档案",
-      description: "九队读书班：73 签选秀、18/24 常规赛积分与曲线、季后赛对阵、三种预测、赛季洞察与九队判词",
+      description: "九队读书班：73 签选秀、19/24 常规赛积分与曲线、季后赛对阵、三种预测、赛季洞察与九队判词",
       url: "sanjian-saiji/index.html",
       tags: ["赛事", "数据看板"],
       updated: "2026-11-01",
