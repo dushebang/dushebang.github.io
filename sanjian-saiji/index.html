@@ -488,7 +488,7 @@
 <div class="wrap">
   <a href="../index.html" style="display:inline-block;margin:0 0 14px;padding:6px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#f9fafb;color:#6b7280;text-decoration:none;font:600 13px/1 'Microsoft YaHei','PingFang SC',system-ui,sans-serif">← 返回数据站</a>
   <div class="kick">SEASON DOSSIER · DRAFT + LEAGUE</div>
-  <div class="h1"><a href="#league" id="home-title" title="回到主页 · 积分榜">三团联动 · 赛季档案</a><em>选秀 · 积分榜 · 赛程</em></div>
+  <div class="h1"><a href="#playoff" id="home-title" title="回到主页 · 季后赛">三团联动 · 赛季档案</a><em>选秀 · 积分榜 · 赛程</em></div>
   <div class="sub">73 个签位落定，常规赛 22/22 已赛：<span class="tn" style="color:#111111">石页</span> <b>125 分</b> 独自领跑，<span class="tn" style="color:#C96A18">三酒</span> 121 第 2，<span class="tn" style="color:#2F66C9">冬瓜</span> 116 第 3，<span class="tn" style="color:#7F7F7F">林仔</span> 113 第 4</div>
   <div class="chips">
     <span data-name="9 支队伍，按团长分为三组。">9 支队伍</span>
@@ -519,8 +519,8 @@
 
   <div class="tabs" role="tablist" aria-label="赛季档案栏目">
     <button class="tab" id="tab-draft" data-tab="draft" role="tab" aria-selected="false" aria-controls="panel-draft">选秀签位<span>73 签</span></button>
-    <button class="tab active" id="tab-league" data-tab="league" role="tab" aria-selected="true" aria-controls="panel-league">常规赛<span>22/22</span></button>
-    <button class="tab" id="tab-playoff" data-tab="playoff" role="tab" aria-selected="false" aria-controls="panel-playoff">季后赛<span>后 3 天</span></button>
+    <button class="tab" id="tab-league" data-tab="league" role="tab" aria-selected="false" aria-controls="panel-league">常规赛<span>22/22</span></button>
+    <button class="tab active" id="tab-playoff" data-tab="playoff" role="tab" aria-selected="true" aria-controls="panel-playoff">季后赛<span>后 3 天</span></button>
   </div>
 
   <section class="tabpanel" id="panel-draft" data-panel="draft" role="tabpanel" aria-labelledby="tab-draft">
@@ -982,7 +982,7 @@
     </div>
   </section>
 
-  <section class="tabpanel active" id="panel-league" data-panel="league" role="tabpanel" aria-labelledby="tab-league">
+  <section class="tabpanel" id="panel-league" data-panel="league" role="tabpanel" aria-labelledby="tab-league">
     <div class="sec"><div class="st">常规赛<i>REGULAR SEASON · 22 / 22</i></div><div class="sd">23 号–次月 2 号 22 项已赛（22/22）　·　队服颜色按官方标注</div></div>
 
     <div class="sec"><div class="st">积分详情<i>STANDINGS</i></div><div class="sd">按总积分排序　·　同分并列，表内按 2 号得分高低　·　2 号两场已计入</div></div>
@@ -3553,7 +3553,7 @@
     </div>
   </section>
 
-  <section class="tabpanel" id="panel-playoff" data-panel="playoff" role="tabpanel" aria-labelledby="tab-playoff">
+  <section class="tabpanel active" id="panel-playoff" data-panel="playoff" role="tabpanel" aria-labelledby="tab-playoff">
     <div class="sec"><div class="st">季后赛<i>PLAYOFFS · 后 3 天</i></div><div class="sd">常规赛前 8 名晋级　·　第 9 名直接淘汰　·　最终排名落位</div></div>
     <div class="panel bracket-panel">
       <div class="bracket" data-name="按常规赛最终排名落位；同分按 2 号得分高低。">
@@ -3693,7 +3693,7 @@
   if(homeTitle){
     homeTitle.addEventListener('click',function(e){
       e.preventDefault();
-      selectTab('league',false);
+      selectTab('playoff',false);
       if(location.hash) history.replaceState(null,'',location.pathname+location.search);
       window.scrollTo({top:0,behavior:'smooth'});
       if(document.documentElement) document.documentElement.scrollTop=0;
@@ -3995,8 +3995,8 @@
   }
   var exportBtn=document.getElementById('export-view');
   if(exportBtn) exportBtn.addEventListener('click', exportViewImage);
-  var initialTab=qs.get('tab') || location.hash.replace('#','') || 'league';
-  if(['draft','league','playoff'].indexOf(initialTab)<0) initialTab='league';
+  var initialTab=qs.get('tab') || location.hash.replace('#','') || 'playoff';
+  if(['draft','league','playoff'].indexOf(initialTab)<0) initialTab='playoff';
   var initialView=qs.get('view') || 'match';
   if(['match','rank','trend','perm','forecast','insight','verdict'].indexOf(initialView)<0) initialView='match';
   setView(initialView);
