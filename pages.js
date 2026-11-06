@@ -45,10 +45,10 @@ window.SITE_DATA = {
     },
     {
       title: "三团联动 · 赛季档案",
-      description: "九队读书班：73 签选秀、22/22 常规赛最终积分与曲线、季后赛首轮与半决赛大比分对阵、赛季洞察与九队判词",
+      description: "九队读书班：73 签选秀、22/22 常规赛积分与曲线、季后赛完整对阵（diyy 4:3 三酒夺冠）、赛季洞察与九队判词",
       url: "sanjian-saiji/index.html",
       tags: ["赛事", "数据看板"],
-      updated: "2026-11-04",
+      updated: "2026-11-05",
       icon: "季"
     }
   ],
